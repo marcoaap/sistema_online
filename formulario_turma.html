@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/estilos.css" rel="stylesheet">
+        
+    <!-- CSS only -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <title>SGA - Novo turma</title>
+
+    <script>
+    function redirecionar()
+    { 
+      window.location.href = "turmas.html"
+    }
+    </script>
+</head>
+
+<body onload="inicio()">
+
+    <nav class="navbar navbar-expand-md navbar-light ">
+        <!-- Cores do navbar: 
+            https://getbootstrap.com/docs/5.0/utilities/background 
+            https://www.geeksforgeeks.org/how-to-change-navigation-bar-color-in-bootstrap/ 
+        -->
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">SAG</a> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span> <!-- formato do icone do botao que são 3 linhas -->
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarCollapse"> 
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <!-- <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li> -->
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="cursos.html">Cursos</a></li>
+            <li class="nav-item" background-color: white><a class="nav-link" aria-current="page" href="turmas.html">Turmas</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="alunos.html">Alunos</a></li>
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="professores.html">Professores</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+       
+      <h1>Cadastramento de Turma</h1>
+      <form method="post" action="processa.php">
+        <div class="row mb-3">
+          <div class="col-md form-group">
+          <label for="curso" class="form-label"> Curso:</label>
+          <select id="curso" name="curso" class="form-select campo-menor"> 
+              <!-- Sobre o select acima:
+                  campo-menor foi uma classe que o professor criou e colocou nos estilos.css 
+                  o form-select substiui o form-control para que o campo tenha uma seta 
+                  -->
+              <option value="XX">Selecione um curso</option>
+              <option value="XLS">Excel</option>
+              <option value="PBI">Power BI</option>
+              <option value="WIN">Windows</option>
+          </select>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md">
+              <input type="date" id="DataIni" name="dataini"
+                  placeholder="dataini" 
+                  class="form-control" /> 
+          </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md">
+            <input type="date" id="Datafim" name="datafim"
+                placeholder="datafim" 
+                class="form-control" />
+        </div>
+    </div>
+    
+        <input type="submit" value="ok" class="btn btn-primary"/> <!-- Class btn para alterr o botão ok -->
+        <input type="reset"  value="Limpar" class="btn btn-secondary"/>
+        <input type="button" value="Voltar" class="btn btn-secondary" onclick="redirecionar()"/>
+        </main>
+  
+      </form>
+
+</body>
+<script src="js/bootstrap.bundle.min.js"></script>
+</html>
